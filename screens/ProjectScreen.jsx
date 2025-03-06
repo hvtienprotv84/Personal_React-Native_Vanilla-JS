@@ -30,18 +30,23 @@ export default function ProjectsScreen() {
 
     const styles = createStyles(isDarkMode);
 
-    const handleProjectPress = (projectName) => {
+    const handleProjectPress = () => {
         // Set the current page to 'ReactNativePage' when a project is clicked
-        setCurrentPage(projectName);
+        setCurrentPage('ReactNativePage');
+    };
+
+    const handleBackPress = () => {
+        // Go back to 'Projects' page
+        setCurrentPage('Projects');
     };
 
     // Render pages based on currentPage state
     const renderPage = () => {
-        if (currentPage !== 'Projects') {
-            return <ReactNativePage />;
+        if (currentPage === 'ReactNativePage') {
+            return <ReactNativePage onBackPress={handleBackPress} />;
         }
 
-    return (
+        return (
 
             <FlatList
                 data={projects}
@@ -76,7 +81,6 @@ export default function ProjectsScreen() {
                 {renderPage()}
         </View>
     );
-
 }
 
 const createStyles = (isDarkMode) => {
