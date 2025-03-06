@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, Switch } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image, Switch, TouchableOpacity  } from 'react-native';
+import ReactNativePage from './ReactNativePage'; // Import ReactNativePage
 
 const projects = [
     { id: '1', name: 'E-commerce App', description: 'Built with MERN Stack', imageUrl: require('../assets/logo_skill/react.png') },
@@ -21,12 +22,45 @@ const projects = [
 
 export default function ProjectsScreen() {
     const [isDarkMode, setIsDarkMode] = useState(false); // Dark mode state
+    const [currentPage, setCurrentPage] = useState('Projects'); // Track current page
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     };
 
     const styles = createStyles(isDarkMode);
+
+    const handleProjectPress = (projectName) => {
+        // Set the current page to 'ReactNativePage' when a project is clicked
+        setCurrentPage(projectName);
+    };
+
+    // Render pages based on currentPage state
+    const renderPage = () => {
+        if (currentPage !== 'Projects') {
+            return <ReactNativePage />;
+        }
+
+    return (
+
+            <FlatList
+                data={projects}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => handleProjectPress(item.name)}>
+                    <View style={styles.projectCard}>
+                        {/* <Image source={{ uri: item.image }} style={styles.projectImage} /> */}
+                        <Image source={item.imageUrl} style={styles.projectImage} />
+                        <View style={styles.textContainer}>
+                            <Text style={styles.projectTitle}>{item.name}</Text>
+                            <Text style={styles.projectDescription}>{item.description}</Text>
+                        </View>
+                    </View>
+                    </TouchableOpacity>
+                )}
+            />
+        );
+    };
 
     return (
         <View style={styles.container}>
@@ -38,23 +72,11 @@ export default function ProjectsScreen() {
                     trackColor={{ false: '#767577', true: '#81b0ff' }}
                     thumbColor={isDarkMode ? '#f5dd4b' : '#f4f3f4'}
                 />
-            </View>
-            <FlatList
-                data={projects}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                    <View style={styles.projectCard}>
-                        {/* <Image source={{ uri: item.image }} style={styles.projectImage} /> */}
-                        <Image source={item.imageUrl} style={styles.projectImage} />
-                        <View style={styles.textContainer}>
-                            <Text style={styles.projectTitle}>{item.name}</Text>
-                            <Text style={styles.projectDescription}>{item.description}</Text>
-                        </View>
-                    </View>
-                )}
-            />
+                </View>
+                {renderPage()}
         </View>
     );
+
 }
 
 const createStyles = (isDarkMode) => {
