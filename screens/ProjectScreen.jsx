@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, Switch } from 'react-native';
 
 const projects = [
-    { id: '1', name: 'E-commerce App', description: 'Built with MERN Stack', image: 'https://via.placeholder.com/100' },
-    { id: '2', name: 'Hospital Management System', description: 'Python, MySQL, Tkinter', image: 'https://via.placeholder.com/100' },
-    { id: '3', name: 'Real-time Chat App', description: 'Node.js, Express.js, MongoDB', image: 'https://via.placeholder.com/100' },
-    { id: '4', name: 'Project Management Tool', description: 'React, Node.js, MongoDB', image: 'https://via.placeholder.com/100' },
-    { id: '5', name: 'Task Tracker App', description: 'React Native, Firebase', image: 'https://via.placeholder.com/100' },
-    { id: '6', name: 'Weather App', description: 'React.js, OpenWeather API', image: 'https://via.placeholder.com/100' },
-    { id: '7', name: 'Social Media Dashboard', description: 'Next.js, GraphQL', image: 'https://via.placeholder.com/100' },
-    { id: '8', name: 'Booking System', description: 'Python, Django, PostgreSQL', image: 'https://via.placeholder.com/100' },
-    { id: '9', name: 'Inventory Management', description: 'React.js, Node.js, MySQL', image: 'https://via.placeholder.com/100' },
-    { id: '10', name: 'Expense Tracker', description: 'React, Redux, Firebase', image: 'https://via.placeholder.com/100' },
-    { id: '11', name: 'Travel Agency Website', description: 'HTML, CSS, JavaScript', image: 'https://via.placeholder.com/100' },
-    { id: '12', name: 'Portfolio Website', description: 'React.js, Tailwind CSS', image: 'https://via.placeholder.com/100' },
-    { id: '13', name: 'Blog Platform', description: 'Node.js, Express.js, MongoDB', image: 'https://via.placeholder.com/100' },
-    { id: '14', name: 'Learning Management System', description: 'React, Node.js, MongoDB', image: 'https://via.placeholder.com/100' },
-    { id: '15', name: 'Chatbot App', description: 'Python, Flask, NLP', image: 'https://via.placeholder.com/100' }
+    { id: '1', name: 'E-commerce App', description: 'Built with MERN Stack', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '2', name: 'Hospital Management System', description: 'Python, MySQL, Tkinter', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '3', name: 'Real-time Chat App', description: 'Node.js, Express.js, MongoDB', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '4', name: 'Project Management Tool', description: 'React, Node.js, MongoDB', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '5', name: 'Task Tracker App', description: 'React Native, Firebase', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '6', name: 'Weather App', description: 'React.js, OpenWeather API', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '7', name: 'Social Media Dashboard', description: 'Next.js, GraphQL', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '8', name: 'Booking System', description: 'Python, Django, PostgreSQL', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '9', name: 'Inventory Management', description: 'React.js, Node.js, MySQL', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '10', name: 'Expense Tracker', description: 'React, Redux, Firebase', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '11', name: 'Travel Agency Website', description: 'HTML, CSS, JavaScript', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '12', name: 'Portfolio Website', description: 'React.js, Tailwind CSS', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '13', name: 'Blog Platform', description: 'Node.js, Express.js, MongoDB', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '14', name: 'Learning Management System', description: 'React, Node.js, MongoDB', imageUrl: require('../assets/logo_skill/react.png') },
+    { id: '15', name: 'Chatbot App', description: 'Python, Flask, NLP', imageUrl: require('../assets/logo_skill/react.png') }
 ];
 
 export default function ProjectsScreen() {
@@ -44,7 +44,8 @@ export default function ProjectsScreen() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.projectCard}>
-                        <Image source={{ uri: item.image }} style={styles.projectImage} />
+                        {/* <Image source={{ uri: item.image }} style={styles.projectImage} /> */}
+                        <Image source={item.imageUrl} style={styles.projectImage} />
                         <View style={styles.textContainer}>
                             <Text style={styles.projectTitle}>{item.name}</Text>
                             <Text style={styles.projectDescription}>{item.description}</Text>

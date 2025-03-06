@@ -21,7 +21,7 @@
             thumbColor={isDarkMode ? '#f5dd4b' : '#f4f3f4'}
             />
         </View>
-        <Text style={styles.welcomeTitle}>Welcome To My Portfolio</Text>
+        <Text style={styles.welcomeTitle}>Xin Chào!</Text>
         <Image source={require('../assets/hero2.png')} style={styles.profileImage} />
         <Text style={styles.title}>Huỳnh Vĩnh Tiến</Text>
         <Text style={styles.subtitle}>Software Developer</Text>
@@ -43,11 +43,11 @@
         right: 10,
         },
         profileImage: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
+        width: 220,
+        height: 220,
+        borderRadius: 110,
         marginBottom: 20,
-        borderColor: isDarkMode ? '#ffffff' : '#121212',
+        borderColor: isDarkMode ? '#ffffff' : '#ffffff00',
         borderWidth: 2,
         },
         title: {
@@ -56,11 +56,13 @@
         color: isDarkMode ? '#ffffff' : '#000000',
         },
         subtitle: {
-        fontSize: 18,
+        fontSize: 22,
+        fontWeight: '500',
         color: isDarkMode ? '#bbbbbb' : '#555555',
         },
         welcomeTitle: {
-        paddingBottom: 80,
+        marginTop: -50,
+        paddingBottom: 40,
         fontSize: 24,
         fontWeight: 'bold',
         color: isDarkMode ? '#ffffff' : '#000000',

@@ -1,40 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Switch } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Switch, Image, Linking } from 'react-native';
 
 const skills = [
-    'React Native',
-    'Data Analysis & Visualization: Tools: Pandas, NumPy; Libraries: Matplotlib, Seaborn, Plotly',
-    'Streamlit',
-    'REST APIs',
-    'Python (Programming Language)',
-    'MERN Stack',
-    'Express.js',
-    'MongoDB',
-    'TypeScript',
-    'Node.js',
-    'Prompt Engineering AI Tools',
-    'Web Applications',
-    'Firebase',
-    'Version Control Systems',
-    'Java',
-    'Software Development',
-    'React.js',
-    'Tailwind CSS',
-    'jQuery',
-    'Bootstrap 5 (Framework)',
-    'JavaScript',
-    'CSS',
-    'HTML',
-    'Front-End Development',
-    'Arabic',
-    'English',
-    'Web Development',
-    'Programming',
-    'Information Systems',
-    'MySQL',
-    'Git',
-    'GitHub',
-];
+    { name: 'React Native', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'MySQL', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'Git', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'GitHub', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+  ];
 
 export default function SkillsScreen() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -44,6 +16,19 @@ export default function SkillsScreen() {
     };
 
     const styles = createStyles(isDarkMode);
+
+    const handlePress = (link) => {
+        // Mở liên kết trong ứng dụng
+        if (link === 'reactnative') {
+          Linking.openURL('https://reactnative.dev'); // Liên kết đến trang React Native
+        } else if (link === 'mysql') {
+          Linking.openURL('https://www.mysql.com'); // Liên kết đến trang MySQL
+        } else if (link === 'git') {
+          Linking.openURL('https://git-scm.com'); // Liên kết đến trang Git
+        } else if (link === 'github') {
+          Linking.openURL('https://github.com'); // Liên kết đến trang GitHub
+        }
+      };
 
     return (
         <View style={styles.container}>
@@ -57,17 +42,36 @@ export default function SkillsScreen() {
                 />
             </View>
 
+
             <Text style={styles.title}>My Skills</Text>
 
-            <FlatList
+            {/* <FlatList
                 data={skills}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.skillCard}>
                         <Text style={styles.skillText}>• {item}</Text>
+                        <Text style={styles.skillText}>• {item}</Text>
                     </View>
                 )}
-            />
+            /> */}
+
+            <FlatList
+      data={skills}
+      keyExtractor={(item, index) => index.toString()}
+      renderItem={({ item }) => (
+        <View style={styles.skillCard}>
+          {/* Hiển thị ảnh */}
+          <Image source={item.imageUrl} style={styles.image} />
+          <TouchableOpacity onPress={() => handlePress(item.link)}>
+          {/* Hiển thị tên kỹ năng */}
+          <Text style={styles.skillText}>{item.name}</Text>
+          </TouchableOpacity>
+
+        </View>
+      )}
+    />
+
         </View>
     );
 }
@@ -96,6 +100,10 @@ const createStyles = (isDarkMode) => {
             fontFamily: 'Roboto', // Optional: Use a modern font family
         },
         skillCard: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
             backgroundColor: isDarkMode ? '#333' : '#ffffff',
             padding: 15,
             marginVertical: 10,
@@ -110,6 +118,8 @@ const createStyles = (isDarkMode) => {
             fontSize: 18,
             color: isDarkMode ? '#ffffff' : '#333',
             fontFamily: 'Roboto', // Optional: Use a modern font family
+            marginLeft: 10,
+            fontWeight: "bold",
         },
         text: {
             fontSize: 16,
