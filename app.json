@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "H.Vĩnh Tiến",
+    "slug": "my-new-project",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/hero.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.huynhvinhtien.mynewproject"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7996b5b0-e3f7-4974-a75e-428772e3bc92"
+      }
+    }
+  }
+}
