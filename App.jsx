@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
 import SkillsScreen from './screens/SkillsScreen';
+import Skills2Screen from './screens/Skills2Screen';
 import ProjectsScreen from './screens/ProjectScreen';
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +24,8 @@ export default function App() {
               iconName = focused ? 'information-circle' : 'information-circle-outline';
             } else if (route.name === 'Skills') {
               iconName = focused ? 'list' : 'list-outline';
+            } else if (route.name === 'Skills2') {
+              iconName = focused ? 'code-slash' : 'code-slash-outline';
             } else if (route.name === 'Projects') {
               iconName = focused ? 'briefcase' : 'briefcase-outline';
             }
@@ -36,6 +39,7 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="About Us" component={AboutScreen} />
         <Tab.Screen name="Skills" component={SkillsScreen} />
+        <Tab.Screen name="Skills2" component={Skills2Screen} />
         <Tab.Screen name="Projects" component={ProjectsScreen} />
       </Tab.Navigator>
     </NavigationContainer>

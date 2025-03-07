@@ -1,5 +1,14 @@
     import React, { useState } from 'react';
-    import { View, Text, Image, StyleSheet, Switch } from 'react-native';
+    import { View, Text, Image, StyleSheet, Switch, ScrollView, TouchableOpacity, Linking } from 'react-native';
+
+    const social_network = [
+        { name: 'Facebook', imageUrl: require('../assets/social_network/facebook2.png'), link: 'facebook' },
+        { name: 'Zalo', imageUrl: require('../assets/social_network/zalo3.png'), link: 'zalo' },
+        { name: 'Phone', imageUrl: require('../assets/social_network/phone3.png'), link: 'phone' },
+        { name: 'GitHub', imageUrl: require('../assets/social_network/github2.png'), link: 'github' },
+        { name: 'Web', imageUrl: require('../assets/social_network/web3.png'), link: 'web' },
+
+      ];
 
     export default function HomeScreen() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -9,6 +18,23 @@
     };
 
     const styles = createStyles(isDarkMode);
+
+    const handlePress = (link) => {
+            // Mở liên kết trong ứng dụng
+            if (link === 'facebook') {
+              Linking.openURL('https://www.facebook.com/vinhtien.huynh.77'); // Liên kết đến trang React Native
+            } else if (link === 'zalo') {
+              Linking.openURL('https://zalo.me/0931103224'); // Liên kết đến trang MySQL
+            } else if (link === 'phone') {
+              Linking.openURL('tel:0931103224'); // Liên kết đến trang Git
+            } else if (link === 'github') {
+              Linking.openURL('https://github.com/hvtienprotv84'); // Liên kết đến trang GitHub
+            } else if (link === 'web') {
+              Linking.openURL('https://prsonal-portfolio-main.vercel.app/'); // Liên kết đến trang GitHub
+            }
+
+
+          };
 
     return (
         <View style={styles.container}>
@@ -25,6 +51,21 @@
         <Image source={require('../assets/hero2.png')} style={styles.profileImage} />
         <Text style={styles.title}>Huỳnh Vĩnh Tiến</Text>
         <Text style={styles.subtitle}>Software Developer</Text>
+
+        <View style={styles.container_CVImage}>
+        <Image source={require('../assets/q2.png')} style={styles.CVImage} />
+            <Text style={styles.text_CV}>Tải CV</Text>
+        </View>
+
+        <ScrollView horizontal={true} contentContainerStyle={styles.scrollView}>
+      {social_network.map((item, index) => (
+        <View key={index} style={styles.itemContainer}>
+            <TouchableOpacity onPress={() => handlePress(item.link)}>
+                <Image source={item.imageUrl} style={styles.image_social_network} />
+            </TouchableOpacity>
+        </View>
+        ))}
+        </ScrollView>
         </View>
     );
     }
@@ -61,7 +102,7 @@
         color: isDarkMode ? '#bbbbbb' : '#555555',
         },
         welcomeTitle: {
-        marginTop: -50,
+        marginTop: 30,
         paddingBottom: 40,
         fontSize: 24,
         fontWeight: 'bold',
@@ -70,6 +111,30 @@
         text: {
             fontSize: 15,
             color: isDarkMode ? 'white' : 'black',
-        }
+        },
+        CVImage: {
+         width: 30,
+         height: 30,
+        },
+        text_CV:{
+        fontSize: 16,
+        marginLeft: 5,
+        fontWeight: "bold", 
+        color: isDarkMode ? 'white' : 'black',
+        },
+        container_CVImage:{
+        display: "flex",
+        flexDirection: "row",
+        alignItems:"center",
+        marginTop: 10,
+        },
+        image_social_network:{
+         width: 40,
+         height: 40,
+         marginLeft: 10,
+        },
+        scrollView:{
+         marginTop: 40,
+        },
     });
     };
