@@ -33,7 +33,10 @@
               Linking.openURL('https://prsonal-portfolio-main.vercel.app/'); // Liên kết đến trang GitHub
             }
 
+          };
 
+          const openCV= () => {
+            Linking.openURL('https://www.google.com');
           };
 
     return (
@@ -52,10 +55,13 @@
         <Text style={styles.title}>Huỳnh Vĩnh Tiến</Text>
         <Text style={styles.subtitle}>Software Developer</Text>
 
-        <View style={styles.container_CVImage}>
-        <Image source={require('../assets/q2.png')} style={styles.CVImage} />
-            <Text style={styles.text_CV}>Tải CV</Text>
-        </View>
+        <TouchableOpacity onPress={openCV}>
+            <View style={styles.container_CVImage}>
+                <Image source={require('../assets/q2.png')} style={styles.CVImage} />
+                <Text style={styles.text_CV}>Tải CV</Text>
+            </View>
+        </TouchableOpacity>
+        
 
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollView}>
       {social_network.map((item, index) => (
