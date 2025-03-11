@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,16 +6,45 @@ import {
   Image,
   ScrollView,
   Switch,
+  ActivityIndicator,
 } from "react-native";
+import axios from 'axios';
 
 export default function AboutScreen() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Gọi API sử dụng Axios
+    axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json')
+      .then(response => {
+        console.log(response.data);  // Debug dữ liệu
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
   const styles = createStyles(isDarkMode);
+
+   // Hiển thị khi đang tải dữ liệu
+   if (loading) {
+    return (
+      <View style={styles.center}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -35,7 +64,7 @@ export default function AboutScreen() {
         style={styles.profileImage}
       />
       <Text style={styles.title}>About Me</Text>
-      <Text style={styles.text}>
+      {/* <Text style={styles.text}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, It has survived not only five
@@ -47,7 +76,20 @@ export default function AboutScreen() {
         When I'm not coding, I love exploring new technologies, sharing
         knowledge, and collaborating with like-minded professionals to build
         impactful projects.
-      </Text>
+      </Text> */}
+      <ScrollView contentContainerStyle={styles.container}>
+      {data && data.map((item, index) => (
+        <View key={index} style={styles.card}>
+          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.technologies}>{item.technologies}</Text>
+          <Text style={styles.content}>{item.content}</Text>
+          <Text style={styles.graduate}>Graduate: {item.graduate}</Text>
+          <Text style={styles.exp}>Experience: {item.exp}</Text>
+        </View>
+      ))}
+    </ScrollView>
+    <Text>Dữ liệu được tạo và hiển thị bởi API JSON</Text>
+
     </ScrollView>
   );
 }
