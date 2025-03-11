@@ -2,10 +2,32 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Switch, Image, Linking } from 'react-native';
 
 const skills = [
-    { name: 'React Native', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
-    { name: 'MySQL', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
-    { name: 'Git', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
-    { name: 'GitHub', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'HTML', imageUrl: require('../assets/logo_skill/html.png'), link: 'reactnative' },
+    { name: 'CSS', imageUrl: require('../assets/logo_skill/css.png'), link: 'reactnative' },
+    { name: 'JavaScript', imageUrl: require('../assets/logo_skill/javascript.png'), link: 'reactnative' },
+    { name: 'TypeScript', imageUrl: require('../assets/logo_skill/typescript.png'), link: 'reactnative' },
+    { name: 'ReactJS', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'React Native', imageUrl: require('../assets/logo_skill/reactnative.png'), link: 'reactnative' },
+    { name: 'VueJS', imageUrl: require('../assets/logo_skill/vue.png'), link: 'reactnative' },
+    { name: 'NextJS', imageUrl: require('../assets/logo_skill/next.png'), link: 'reactnative' },
+    { name: 'Angular', imageUrl: require('../assets/logo_skill/angular.png'), link: 'reactnative' },
+    { name: 'Redux', imageUrl: require('../assets/logo_skill/redux.png'), link: 'reactnative' },
+    { name: 'API', imageUrl: require('../assets/logo_skill/api.png'), link: 'reactnative' },
+    { name: 'Tailwind CSS', imageUrl: require('../assets/logo_skill/tailwindcss.png'), link: 'reactnative' },
+    { name: 'Bootstrap', imageUrl: require('../assets/logo_skill/bootstrap.png'), link: 'reactnative' },
+    { name: 'SASS', imageUrl: require('../assets/logo_skill/sass.png'), link: 'reactnative' },
+    { name: 'Docker', imageUrl: require('../assets/logo_skill/docker.png'), link: 'reactnative' },
+    { name: 'SQL Server', imageUrl: require('../assets/logo_skill/sqlserver.png'), link: 'reactnative' },
+    { name: 'MySQL', imageUrl: require('../assets/logo_skill/mysql.png'), link: 'reactnative' },
+    { name: 'MongoDB', imageUrl: require('../assets/logo_skill/mongo.png'), link: 'reactnative' },
+    { name: 'Git', imageUrl: require('../assets/logo_skill/git.png'), link: 'reactnative' },
+    { name: 'Github', imageUrl: require('../assets/logo_skill/github2.png'), link: 'reactnative' },
+    { name: 'Vercel', imageUrl: require('../assets/logo_skill/vercel.png'), link: 'reactnative' },
+    { name: 'Expo', imageUrl: require('../assets/logo_skill/expo.png'), link: 'reactnative' },
+    { name: 'Photoshop', imageUrl: require('../assets/logo_skill/photoshop.png'), link: 'reactnative' },
+    { name: 'Figma', imageUrl: require('../assets/logo_skill/figma.png'), link: 'reactnative' },
+    { name: 'Responsive', imageUrl: require('../assets/logo_skill/responsive.png'), link: 'reactnative' },
+
   ];
 
 export default function SkillsScreen() {
