@@ -119,11 +119,11 @@
             color: isDarkMode ? 'white' : 'black',
         },
         CVImage: {
-         width: 30,
-         height: 30,
+         width: 40,
+         height: 40,
         },
         text_CV:{
-        fontSize: 16,
+        fontSize: 24,
         marginLeft: 5,
         fontWeight: "bold", 
         color: isDarkMode ? 'white' : 'black',
@@ -135,12 +135,13 @@
         marginTop: 10,
         },
         image_social_network:{
-         width: 40,
-         height: 40,
+         width: 60,
+         height: 60,
          marginLeft: 10,
         },
         scrollView:{
-         marginTop: 40,
+         marginTop: 20,
+
         },
     });
     };

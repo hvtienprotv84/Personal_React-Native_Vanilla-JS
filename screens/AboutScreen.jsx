@@ -20,7 +20,7 @@ export default function AboutScreen() {
     // Gọi API sử dụng Axios
     axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json')
       .then(response => {
-        console.log(response.data);  // Debug dữ liệu
+        // console.log(response.data);  // Debug dữ liệu
         setData(response.data);
         setLoading(false);
       })
@@ -63,7 +63,7 @@ export default function AboutScreen() {
         source={require("../assets/hero2.png")}
         style={styles.profileImage}
       />
-      <Text style={styles.title}>About Me</Text>
+      {/* <Text style={styles.title}>About Me</Text> */}
       {/* <Text style={styles.text}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -80,15 +80,22 @@ export default function AboutScreen() {
       <ScrollView contentContainerStyle={styles.container}>
       {data && data.map((item, index) => (
         <View key={index} style={styles.card}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.technologies}>{item.technologies}</Text>
-          <Text style={styles.content}>{item.content}</Text>
-          <Text style={styles.graduate}>Graduate: {item.graduate}</Text>
-          <Text style={styles.exp}>Experience: {item.exp}</Text>
+          <Text style={styles.title_API_JSON}>{item.name}</Text>
+          <Text style={styles.title_API_JSON}>{item.technologies}</Text>
+          <Text style={styles.title_API_JSON}>{item.content}</Text>
+          <Text style={styles.title_API_JSON}>Graduate: {item.graduate}</Text>
+          <Text style={styles.title_API_JSON}>Experience: {item.exp}</Text>
         </View>
       ))}
     </ScrollView>
-    <Text>Dữ liệu được tạo và hiển thị bởi API JSON</Text>
+
+    <View style={styles.Container_API_JSON}>
+      <Text style={styles.title_API_JSON}>Dữ liệu được tạo và hiển thị bởi </Text>
+        <Image source={require('../assets/api_json.png')} style={styles.Image_API_JSON} />
+      <Text style={styles.title_API_JSON}> API JSON</Text>
+    </View>
+
+    <View style={styles.divider} />
 
     </ScrollView>
   );
@@ -134,6 +141,21 @@ const createStyles = (isDarkMode) => {
       position: "absolute",
       top: 10,
       right: 10,
+    },
+    Image_API_JSON:{
+      width: 15,
+      height: 15,
+    },
+    Container_API_JSON:{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    title_API_JSON: {
+      fontSize: 16,
+      color: isDarkMode ? "#ffffff" : "#333",
+
     },
   });
 };

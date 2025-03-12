@@ -20,7 +20,7 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = focused ? 'home' : 'home-outline';
-            } else if (route.name === 'About Us') {
+            } else if (route.name === 'About') {
               iconName = focused ? 'information-circle' : 'information-circle-outline';
             } else if (route.name === 'Skills') {
               iconName = focused ? 'list' : 'list-outline';
@@ -37,7 +37,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="About Us" component={AboutScreen} />
+        <Tab.Screen name="About" component={AboutScreen} />
         <Tab.Screen name="Skills" component={SkillsScreen} />
         <Tab.Screen name="Skills2" component={Skills2Screen} />
         <Tab.Screen name="Projects" component={ProjectsScreen} />
