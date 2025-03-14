@@ -23,7 +23,8 @@ export default function App() {
             } else if (route.name === 'About') {
               iconName = focused ? 'information-circle' : 'information-circle-outline';
             } else if (route.name === 'Skills') {
-              iconName = focused ? 'list' : 'list-outline';
+              // iconName = focused ? 'list' : 'list-outline';
+              iconName = focused ? 'code-slash' : 'code-slash-outline';
             } else if (route.name === 'Skills2') {
               iconName = focused ? 'code-slash' : 'code-slash-outline';
             } else if (route.name === 'Projects') {
@@ -39,7 +40,7 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="About" component={AboutScreen} />
         <Tab.Screen name="Skills" component={SkillsScreen} />
-        <Tab.Screen name="Skills2" component={Skills2Screen} />
+        {/* <Tab.Screen name="Skills2" component={Skills2Screen} /> */}
         <Tab.Screen name="Projects" component={ProjectsScreen} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -8,7 +8,7 @@ import {
   Switch,
   ActivityIndicator,
 } from "react-native";
-import axios from 'axios';
+import axios from "axios";
 
 export default function AboutScreen() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,11 +16,32 @@ export default function AboutScreen() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   // Gọi API sử dụng Fetch thay vì Axios
+  //   fetch('https://hvtienprotv84.github.io/fetchapi-main/data.json')
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();  // Chuyển đổi dữ liệu JSON
+  //     })
+  //     .then(data => {
+  //       console.log(data);  // Debug dữ liệu
+  //       setData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+
   useEffect(() => {
     // Gọi API sử dụng Axios
     axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json')
       .then(response => {
-        // console.log(response.data);  // Debug dữ liệu
+        console.log(response.data);  // Debug dữ liệu
         setData(response.data);
         setLoading(false);
       })
@@ -30,21 +51,21 @@ export default function AboutScreen() {
       });
   }, []);
 
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  const styles = createStyles(isDarkMode);
-
-   // Hiển thị khi đang tải dữ liệu
-   if (loading) {
+  // Hiển thị khi đang tải dữ liệu
+  if (loading) {
     return (
       <View style={styles.center}>
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
     );
   }
+
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const styles = createStyles(isDarkMode);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -153,7 +174,6 @@ const createStyles = (isDarkMode) => {
       alignItems: "center",
     },
     title_API_JSON: {
-      fontSize: 16,
       color: isDarkMode ? "#ffffff" : "#333",
 
     },
