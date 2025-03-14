@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -13,8 +13,28 @@ import axios from "axios";
 export default function AboutScreen() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+  // Sử dụng async/await để gọi API
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json');
+      setData(response.data);
+    } catch (error) {
+      setError('Error fetching data');
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
 
   // useEffect(() => {
   //   // Gọi API sử dụng Fetch thay vì Axios
@@ -37,28 +57,28 @@ export default function AboutScreen() {
   // }, []);
 
 
-  useEffect(() => {
-    // Gọi API sử dụng Axios
-    axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json')
-      .then(response => {
-        console.log(response.data);  // Debug dữ liệu
-        setData(response.data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // Gọi API sử dụng Axios
+  //   axios.get('https://hvtienprotv84.github.io/fetchapi-main/data.json')
+  //     .then(response => {
+  //       console.log(response.data);  // Debug dữ liệu
+  //       setData(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
-  // Hiển thị khi đang tải dữ liệu
-  if (loading) {
-    return (
-      <View style={styles.center}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
-    );
-  }
+  // // Hiển thị khi đang tải dữ liệu
+  // if (loading) {
+  //   return (
+  //     <View style={styles.center}>
+  //       <ActivityIndicator size="large" color="#0000ff" />
+  //     </View>
+  //   );
+  // }
 
 
   const toggleTheme = () => {
@@ -66,6 +86,24 @@ export default function AboutScreen() {
   };
 
   const styles = createStyles(isDarkMode);
+
+// Hiển thị khi đang tải dữ liệu
+if (loading) {
+  return (
+    <View style={styles.center}>
+      <ActivityIndicator size="large" color="#0000ff" />
+    </View>
+  );
+}
+
+// Hiển thị lỗi nếu có
+if (error) {
+  return (
+    <View style={styles.center}>
+      <Text>{error}</Text>
+    </View>
+  );
+}
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -124,6 +162,12 @@ export default function AboutScreen() {
 
 const createStyles = (isDarkMode) => {
   return StyleSheet.create({
+    center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+  },
     container: {
       flexGrow: 1,
       alignItems: "center",
