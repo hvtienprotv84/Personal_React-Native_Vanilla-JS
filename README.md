@@ -21,7 +21,7 @@
 
 - Android
 - JavaScript 
-- React
+- ReactJS
 - React Native
 - API
 - Expo
