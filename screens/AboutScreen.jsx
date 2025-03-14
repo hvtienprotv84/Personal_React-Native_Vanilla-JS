@@ -139,22 +139,30 @@ if (error) {
       <ScrollView contentContainerStyle={styles.container}>
       {data && data.map((item, index) => (
         <View key={index} style={styles.card}>
-          <Text style={styles.title_API_JSON}>{item.name}</Text>
-          <Text style={styles.title_API_JSON}>{item.technologies}</Text>
-          <Text style={styles.title_API_JSON}>{item.content}</Text>
-          <Text style={styles.title_API_JSON}>Graduate: {item.graduate}</Text>
-          <Text style={styles.title_API_JSON}>Experience: {item.exp}</Text>
+          <Text style={[styles.title_API_JSON, styles.name]}>{item.name}</Text>
+          <Text style={[styles.title_API_JSON, styles.technologies]}>{item.technologies}</Text>
+          <Text style={[styles.title_API_JSON, styles.content]}>{item.content}</Text>
+          <View style={[styles.container_graduate]}>
+            <Text style={[styles.text_graduate]}>Graduate: </Text>
+            <Text style={[styles.title_API_JSON, styles.graduate]}>{item.graduate}</Text>
+          </View>
+          {/* <Text style={[styles.title_API_JSON, styles.graduate]}>Graduate: {item.graduate}</Text> */}
+          <View style={[styles.container_graduate]}>
+            <Text style={[styles.text_graduate]}>Experience: </Text>
+            <Text style={[styles.title_API_JSON, styles.graduate]}>{item.exp}</Text>
+          </View>
+          {/* <Text style={[styles.title_API_JSON, styles.exp]}>Experience: {item.exp}</Text> */}
         </View>
       ))}
+
+      <View style={styles.divider} />
+
+        <View style={styles.Container_API_JSON}>
+          <Text style={styles.title_API_JSON_2}>( Dữ liệu được tạo và hiển thị bởi </Text>
+            <Image source={require('../assets/api_json.png')} style={styles.Image_API_JSON} />
+          <Text style={styles.title_API_JSON_2}> API JSON )</Text>
+        </View>
     </ScrollView>
-
-    <View style={styles.Container_API_JSON}>
-      <Text style={styles.title_API_JSON}>Dữ liệu được tạo và hiển thị bởi </Text>
-        <Image source={require('../assets/api_json.png')} style={styles.Image_API_JSON} />
-      <Text style={styles.title_API_JSON}> API JSON</Text>
-    </View>
-
-    <View style={styles.divider} />
 
     </ScrollView>
   );
@@ -197,7 +205,8 @@ const createStyles = (isDarkMode) => {
       color: isDarkMode ? "#ffffff" : "#000000",
     },
     divider: {
-      width: "80%",
+      // width: "80%",
+      width: "70%",
       height: 1,
       backgroundColor: "#ccc",
       marginVertical: 20,
@@ -219,7 +228,27 @@ const createStyles = (isDarkMode) => {
     },
     title_API_JSON: {
       color: isDarkMode ? "#ffffff" : "#333",
-
+    },
+    title_API_JSON_2: {
+      color: isDarkMode ? "#ffffff" : "#333",
+      fontWeight: "bold",
+    },
+    name: {
+      fontSize: 26,
+      fontWeight: "bold",
+    },
+    technologies:{  
+      fontSize: 18,
+      fontWeight: "500",
+    },
+    container_graduate: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      alignItems: "center",
+    },
+    text_graduate: {
+      fontWeight: "bold",
     },
   });
 };
