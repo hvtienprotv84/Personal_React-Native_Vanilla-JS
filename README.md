@@ -7,3 +7,21 @@
   <img src="https://img.icons8.com/ios11/512/FFFFFF/expo.png" alt="React Native logo" width="200" />  &nbsp;
   <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0df13e2e-0b9f-4692-ac80-740e27a35f32/de6gqiq-3d78b41b-cb2e-41e6-892a-196285320108.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBkZjEzZTJlLTBiOWYtNDY5Mi1hYzgwLTc0MGUyN2EzNWYzMlwvZGU2Z3FpcS0zZDc4YjQxYi1jYjJlLTQxZTYtODkyYS0xOTYyODUzMjAxMDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jYk_ExWTvLpIO95Ygzs1t7xRKjKcMqFLX7VD9P38dhU" alt="React Native logo" width="190" />
 </div>  
+
+
+<hr/>
+
+<div align="center">
+  
+  [![My Skills](https://skillicons.dev/icons?i=js,react)](https://skillicons.dev)
+  ![My Skills](https://go-skill-icons.vercel.app/api/icons?i=api&perline=3)
+ <img src="https://img.icons8.com/ios11/512/FFFFFF/expo.png" width="47" height="47" />
+ <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0df13e2e-0b9f-4692-ac80-740e27a35f32/de6gqiq-3d78b41b-cb2e-41e6-892a-196285320108.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBkZjEzZTJlLTBiOWYtNDY5Mi1hYzgwLTc0MGUyN2EzNWYzMlwvZGU2Z3FpcS0zZDc4YjQxYi1jYjJlLTQxZTYtODkyYS0xOTYyODUzMjAxMDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jYk_ExWTvLpIO95Ygzs1t7xRKjKcMqFLX7VD9P38dhU" alt="React Native logo" width="47" height="47" />
+</div>  
+
+- Android
+- JavaScript 
+- React
+- React Native
+- API
+- Expo
