@@ -53,13 +53,27 @@
         <Text style={styles.welcomeTitle}>Xin Chào!</Text>
         <Image source={require('../assets/hero2.png')} style={styles.profileImage} />
         <Text style={styles.title}>Huỳnh Vĩnh Tiến</Text>
-        <Text style={styles.subtitle}>Software Developer</Text>
+        <Text style={styles.subtitle}>Software Engineer</Text>
 
-        <TouchableOpacity onPress={openCV}>
+        {/* <TouchableOpacity onPress={openCV}>
             <View style={styles.container_CVImage}>
                 <Image source={require('../assets/q2.png')} style={styles.CVImage} />
                 <Text style={styles.text_CV}>Tải CV</Text>
             </View>
+        </TouchableOpacity> */}
+
+        <View style={styles.divider} />
+
+        <TouchableOpacity style={styles.button} onPress={openCV}>
+          <Image
+            source={require('../assets/pdf2.png')} // Replace with your actual image path
+            style={styles.icon}
+          />
+
+          <View style={styles.textContainer}>
+            <Text style={styles.text1}>Resume | CV</Text>
+            <Text style={styles.text2}>Version 1.0</Text>
+          </View>
         </TouchableOpacity>
         
 
@@ -105,7 +119,7 @@
         subtitle: {
         fontSize: 22,
         fontWeight: '500',
-        color: isDarkMode ? '#bbbbbb' : '#555555',
+        color: isDarkMode ? '#fff' : '#000',
         },
         welcomeTitle: {
         marginTop: 30,
@@ -143,5 +157,59 @@
          marginTop: 20,
 
         },
+
+        button: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: isDarkMode ? '#ffffff' : '#000000',
+        borderRadius: 10,
+        // backgroundColor: 'rgb(255, 255, 255)',
+        backgroundColor: isDarkMode ? '#000000' : '#ffffff',
+        paddingVertical: 10, // 0.625rem => 10px
+        paddingHorizontal: 8, // 0.5rem => 8px
+        textAlign: 'center',
+        color: 'rgba(255, 255, 255, 1)',
+        outlineWidth: 0,
+        transitionDuration: '0.8s', // Note: React Native doesn't directly support transitions, but you can use animations for similar effects
+        marginTop: 10,
+        borderStyle: 'dashed', // Dashed border
+      },
+      icon: {
+        width: 46,
+        height: 48,
+      },
+      textContainer: {
+        marginLeft: 4, // 0.2rem => 4px
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        lineHeight: 1,
+        marginTop: 5,
+      },
+      text1: {
+        fontSize: 16, // 0.75rem => 12px
+        lineHeight: 16, // 1rem => 16px
+        // color: '#000000',
+        fontWeight: 'bold',
+        padding: 5,
+        color: isDarkMode ? '#ffffff' : '#000000',
+      },
+      text2: {
+        marginBottom: 4, // 0.25rem => 4px
+        // color: '#000000',
+        fontSize: 12, // 0.75rem => 12px
+        padding: 5,
+        paddingTop: -5,
+        color: isDarkMode ? '#ffffff' : '#000000',
+      },
+      divider: {
+      // width: "80%",
+      width: "50%",
+      height: 1,
+      backgroundColor: "#ccc",
+      marginVertical: 10,
+      fontWeight: 'bold',
+    },
     });
-    };
+};
