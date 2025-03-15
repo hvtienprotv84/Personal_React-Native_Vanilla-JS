@@ -104,11 +104,11 @@
         right: 10,
         },
         profileImage: {
-        width: 220,
-        height: 220,
+        width: 200,
+        height: 200,
         borderRadius: 110,
         marginBottom: 20,
-        borderColor: isDarkMode ? '#ffffff' : '#ffffff00',
+        borderColor: isDarkMode ? '#ffffff' : '#007bff',
         borderWidth: 2,
         },
         title: {
