@@ -2,31 +2,31 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Switch, Image, Linking } from 'react-native';
 
 const skills = [
-    { name: 'HTML', imageUrl: require('../assets/logo_skill/html.png'), link: 'reactnative' },
-    { name: 'CSS', imageUrl: require('../assets/logo_skill/css.png'), link: 'reactnative' },
-    { name: 'JavaScript', imageUrl: require('../assets/logo_skill/javascript.png'), link: 'reactnative' },
-    { name: 'TypeScript', imageUrl: require('../assets/logo_skill/typescript.png'), link: 'reactnative' },
-    { name: 'ReactJS', imageUrl: require('../assets/logo_skill/react.png'), link: 'reactnative' },
+    { name: 'HTML', imageUrl: require('../assets/logo_skill/html.png'), link: 'html' },
+    { name: 'CSS', imageUrl: require('../assets/logo_skill/css.png'), link: 'css' },
+    { name: 'JavaScript', imageUrl: require('../assets/logo_skill/javascript.png'), link: 'javascript' },
+    { name: 'TypeScript', imageUrl: require('../assets/logo_skill/typescript.png'), link: 'typescript' },
+    { name: 'ReactJS', imageUrl: require('../assets/logo_skill/react.png'), link: 'react' },
     { name: 'React Native', imageUrl: require('../assets/logo_skill/reactnative.png'), link: 'reactnative' },
-    { name: 'VueJS', imageUrl: require('../assets/logo_skill/vue.png'), link: 'reactnative' },
-    { name: 'NextJS', imageUrl: require('../assets/logo_skill/next.png'), link: 'reactnative' },
-    { name: 'Angular', imageUrl: require('../assets/logo_skill/angular.png'), link: 'reactnative' },
-    { name: 'Redux', imageUrl: require('../assets/logo_skill/redux.png'), link: 'reactnative' },
-    { name: 'API', imageUrl: require('../assets/logo_skill/api.png'), link: 'reactnative' },
-    { name: 'Tailwind CSS', imageUrl: require('../assets/logo_skill/tailwindcss.png'), link: 'reactnative' },
-    { name: 'Bootstrap', imageUrl: require('../assets/logo_skill/bootstrap.png'), link: 'reactnative' },
-    { name: 'SASS', imageUrl: require('../assets/logo_skill/sass.png'), link: 'reactnative' },
-    { name: 'Docker', imageUrl: require('../assets/logo_skill/docker.png'), link: 'reactnative' },
-    { name: 'SQL Server', imageUrl: require('../assets/logo_skill/sqlserver.png'), link: 'reactnative' },
-    { name: 'MySQL', imageUrl: require('../assets/logo_skill/mysql.png'), link: 'reactnative' },
-    { name: 'MongoDB', imageUrl: require('../assets/logo_skill/mongo.png'), link: 'reactnative' },
-    { name: 'Git', imageUrl: require('../assets/logo_skill/git.png'), link: 'reactnative' },
-    { name: 'Github', imageUrl: require('../assets/logo_skill/github2.png'), link: 'reactnative' },
-    { name: 'Vercel', imageUrl: require('../assets/logo_skill/vercel.png'), link: 'reactnative' },
-    { name: 'Expo', imageUrl: require('../assets/logo_skill/expo.png'), link: 'reactnative' },
-    { name: 'Photoshop', imageUrl: require('../assets/logo_skill/photoshop.png'), link: 'reactnative' },
-    { name: 'Figma', imageUrl: require('../assets/logo_skill/figma.png'), link: 'reactnative' },
-    { name: 'Responsive', imageUrl: require('../assets/logo_skill/responsive.png'), link: 'reactnative' },
+    { name: 'VueJS', imageUrl: require('../assets/logo_skill/vue.png'), link: 'vue' },
+    { name: 'NextJS', imageUrl: require('../assets/logo_skill/next.png'), link: 'next' },
+    { name: 'Angular', imageUrl: require('../assets/logo_skill/angular.png'), link: 'angular' },
+    { name: 'Redux', imageUrl: require('../assets/logo_skill/redux.png'), link: 'redux' },
+    { name: 'API', imageUrl: require('../assets/logo_skill/api.png'), link: 'api' },
+    { name: 'Tailwind CSS', imageUrl: require('../assets/logo_skill/tailwindcss.png'), link: 'tailwind' },
+    { name: 'Bootstrap', imageUrl: require('../assets/logo_skill/bootstrap.png'), link: 'bootstrap' },
+    { name: 'SASS', imageUrl: require('../assets/logo_skill/sass.png'), link: 'sass' },
+    { name: 'Docker', imageUrl: require('../assets/logo_skill/docker.png'), link: 'docker' },
+    { name: 'SQL Server', imageUrl: require('../assets/logo_skill/sqlserver.png'), link: 'sqlserver' },
+    { name: 'MySQL', imageUrl: require('../assets/logo_skill/mysql.png'), link: 'mysql' },
+    { name: 'MongoDB', imageUrl: require('../assets/logo_skill/mongo.png'), link: 'mongo' },
+    { name: 'Git', imageUrl: require('../assets/logo_skill/git.png'), link: 'git' },
+    { name: 'Github', imageUrl: require('../assets/logo_skill/github2.png'), link: 'github' },
+    { name: 'Vercel', imageUrl: require('../assets/logo_skill/vercel.png'), link: 'vercel' },
+    { name: 'Expo', imageUrl: require('../assets/logo_skill/expo.png'), link: 'expo' },
+    { name: 'Photoshop', imageUrl: require('../assets/logo_skill/photoshop.png'), link: 'photoshop' },
+    { name: 'Figma', imageUrl: require('../assets/logo_skill/figma.png'), link: 'figma' },
+    { name: 'Responsive', imageUrl: require('../assets/logo_skill/responsive.png'), link: 'responsive' },
 
   ];
 
@@ -41,14 +41,56 @@ export default function SkillsScreen() {
 
     const handlePress = (link) => {
         // Mở liên kết trong ứng dụng
-        if (link === 'reactnative') {
-          Linking.openURL('https://reactnative.dev'); // Liên kết đến trang React Native
+        if (link === 'html') {
+          Linking.openURL('https://vi.wikipedia.org/wiki/HTML'); // Liên kết đến trang React Native
+        } else if (link === 'css') {
+          Linking.openURL('https://vi.wikipedia.org/wiki/CSS');
+        } else if (link === 'javascript') {
+          Linking.openURL('https://vi.wikipedia.org/wiki/JavaScript');
+        } else if (link === 'typescript') {
+          Linking.openURL('https://www.typescriptlang.org/');
+        } else if (link === 'react') {
+          Linking.openURL('https://react.dev/');
+        } else if (link === 'reactnative') {
+          Linking.openURL('https://reactnative.dev/');
+        } else if (link === 'vue') {
+          Linking.openURL('https://vuejs.org/');
+        } else if (link === 'next') {
+          Linking.openURL('https://nextjs.org/');
+        } else if (link === 'angular') {
+          Linking.openURL('https://angular.dev/');
+        } else if (link === 'redux') {
+          Linking.openURL('https://redux.js.org/');
+        } else if (link === 'api') {
+          Linking.openURL('https://aws.amazon.com/vi/what-is/api/');
+        } else if (link === 'tailwind') {
+          Linking.openURL('https://tailwindcss.com/');
+        } else if (link === 'bootstrap') {
+          Linking.openURL('https://getbootstrap.com/');
+        } else if (link === 'sass') {
+          Linking.openURL('https://sass-lang.com/');
+        } else if (link === 'docker') {
+          Linking.openURL('https://www.docker.com/');
+        } else if (link === 'sqlserver') {
+          Linking.openURL('https://vi.wikipedia.org/wiki/Microsoft_SQL_Server');
         } else if (link === 'mysql') {
-          Linking.openURL('https://www.mysql.com'); // Liên kết đến trang MySQL
+          Linking.openURL('https://www.mysql.com/');
+        } else if (link === 'mongo') {
+          Linking.openURL('https://www.mongodb.com/');
         } else if (link === 'git') {
-          Linking.openURL('https://git-scm.com'); // Liên kết đến trang Git
+          Linking.openURL('https://git-scm.com/');
         } else if (link === 'github') {
-          Linking.openURL('https://github.com'); // Liên kết đến trang GitHub
+          Linking.openURL('https://en.wikipedia.org/wiki/GitHub');
+        } else if (link === 'vercel') {
+          Linking.openURL('https://en.wikipedia.org/wiki/Vercel');
+        } else if (link === 'expo') {
+          Linking.openURL('https://viblo.asia/p/bat-dau-voi-react-native-va-expo-6J3Zgo2RZmB');
+        } else if (link === 'photoshop') {
+          Linking.openURL('https://www.adobe.com/vn_vi/products/photoshop.html');
+        } else if (link === 'figma') {
+          Linking.openURL('https://www.figma.com/');
+        } else if (link === 'responsive') {
+          Linking.openURL('https://vi.wikipedia.org/wiki/Thi%E1%BA%BFt_k%E1%BA%BF_web_%C4%91%C3%A1p_%E1%BB%A9ng');
         }
       };
 
@@ -82,15 +124,14 @@ export default function SkillsScreen() {
       data={skills}
       keyExtractor={(item, index) => index.toString()}
       renderItem={({ item }) => (
+        <TouchableOpacity onPress={() => handlePress(item.link)}>
         <View style={styles.skillCard}>
           {/* Hiển thị ảnh */}
           <Image source={item.imageUrl} style={styles.image} />
-          <TouchableOpacity onPress={() => handlePress(item.link)}>
           {/* Hiển thị tên kỹ năng */}
           <Text style={styles.skillText}>{item.name}</Text>
-          </TouchableOpacity>
-
         </View>
+        </TouchableOpacity>
       )}
     />
 
